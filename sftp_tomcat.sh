@@ -1,11 +1,11 @@
 mv target/myweb*.war target/myweb.war
 
-sftp ec2-user@172.31.17.24 <<EOF
+sftp ec2-user@172.31.29.38 <<EOF
 
-rename /opt/tomcat8/webapps/myweb.war /tmp/myweb.war.back
-rm /opt/tomcat8/webapps/myweb*
-put target/myweb.war  /opt/tomcat8/webapps/
+rename /opt/tomcat/webapps/myweb.war /tmp/myweb.war.back
+rm /opt/tomcat/webapps/myweb*
+put target/myweb.war  /opt/tomcat/webapps/
 bye
 EOF
-ssh ec2-user@172.31.17.24 /opt/tomcat8/bin/shutdown.sh
-ssh ec2-user@172.31.17.24 /opt/tomcat8/bin/startup.sh
+ssh ec2-user@172.31.29.38 /opt/tomcat/bin/shutdown.sh
+ssh ec2-user@172.31.29.38 /opt/tomcat/bin/startup.sh
