@@ -1,4 +1,4 @@
-mvn target/myweb*.war target/myweb.war
+mv target/myweb*.war target/myweb.war
 sftp ec2-user@35.178.160.225  <<EOF
 rename /opt/tomcat/webapps/myweb.war /tmp/myweb.war.back
 rm -r /opt/tomcat/webapps/myweb*
